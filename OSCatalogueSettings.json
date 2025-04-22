@@ -1,0 +1,41 @@
+{
+  "auto_update": false,
+  "update_from": "https://github.com/Cruizepeni/OSCatalogue/tree/main/OSCatalogue/Distros",
+  "savepath_root": true,
+  "savepath_custom": false,
+  "custom_savepath": "example/of/user/savepath",
+  "scrape_distros": true,
+  "distros": {
+    "Alpine Linux": false,
+    "Arch Linux": false,
+    "Arco Linux": false,
+    "Debian": false,
+    "Elementry OS": false,
+    "Endeavor OS": false,
+    "Garuda Linux": false,
+    "Gentoo": false,
+    "Kali Linux": false,
+    "Linux Mint": false,
+    "Manjaro Linux": false,
+    "OpenSUSE": false,
+    "Parrot OS": false,
+    "Peppermint OS": false,
+    "Pop OS": false,
+    "Qubes OS": false,
+    "Raspberry Pi": true,
+    "Rocky Linux": false,
+    "Slackware": false,
+    "Tails OS": false,
+    "Ubuntu": false,
+    "Void Linux": false,
+    "Zorin OS": false
+  },
+  "create_websocket_server": false,
+  "websocket_port": 5020,
+  "json_dump_requests": [
+    "#GETOSCATALOGUE!",
+    "#GETLINUX!",
+    "#GETRASPBERRYPI!",
+    "#GETHELP!"
+  ]
+}
