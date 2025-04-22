@@ -1,0 +1,101 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "OSCatalogue Distro Schema",
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "Distro name, e.g. \"Ubuntu\", \"Arch Linux\""
+      },
+      "icon": {
+        "type": "string",
+        "format": "uri",
+        "description": "URL to an SVG/PNG icon"
+      },
+      "description": {
+        "type": "string",
+        "description": "Brief overview of the distro"
+      },
+      "homepage": {
+        "type": "string",
+        "format": "uri",
+        "description": "Official website URL"
+      },
+      "documentation": {
+        "type": "array",
+        "items": { "type": "string", "format": "uri" },
+        "description": "Links to official documentation or user guides"
+      },
+      "wikis": {
+        "type": "array",
+        "items": { "type": "string", "format": "uri" },
+        "description": "Wikipedia or community wiki URLs"
+      },
+      "install_guides": {
+        "type": "array",
+        "items": { "type": "string", "format": "uri" },
+        "description": "Step‑by‑step installation tutorial URLs"
+      },
+      "distrowatch": {
+        "type": "array",
+        "items": { "type": "string", "format": "uri" },
+        "description": "Distrowatch page URLs"
+      },
+      "github_repos": {
+        "type": "array",
+        "items": { "type": "string", "format": "uri" },
+        "description": "Source code repository URLs"
+      },
+      "forums": {
+        "type": "array",
+        "items": { "type": "string", "format": "uri" },
+        "description": "Community forum or subreddit URLs"
+      },
+      "mailing_lists": {
+        "type": "array",
+        "items": { "type": "string", "format": "uri" },
+        "description": "Distro mailing list archives or signup URLs"
+      },
+      "initial_release": {
+        "type": "string",
+        "description": "Raw initial release date, e.g. \"June 27, 2011\""
+      },
+      "latest_release": {
+        "type": "string",
+        "description": "Raw latest release date, e.g. \"April 22, 2025\""
+      },
+      "based_on": {
+        "type": "array",
+        "items": { "type": "string" },
+        "minItems": 1,
+        "description": "Immediate upstream parent distro(s), e.g. [\"Debian\"], [\"Arch\"]"
+      },
+      "versions": {
+        "type": "object",
+        "minProperties": 1,
+        "additionalProperties": {
+          "$ref": "OSCatalogue.Version.Schema.json"
+        },
+        "description": "Map of version identifiers to their metadata"
+      }
+    },
+    "required": [
+      "name",
+      "icon",
+      "description",
+      "homepage",
+      "documentation",
+      "wikis",
+      "install_guides",
+      "distrowatch",
+      "github_repos",
+      "forums",
+      "mailing_lists",
+      "initial_release",
+      "latest_release",
+      "based_on",
+      "versions"
+    ],
+    "additionalProperties": false
+  }
+  

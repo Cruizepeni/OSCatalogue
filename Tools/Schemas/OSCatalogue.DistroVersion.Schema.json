@@ -1,0 +1,145 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "OSCatalogue Distro Version Schema",
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "Full edition name, e.g. \"Linux Mint 22.1 Cinnamon Edition\""
+      },
+      "version": {
+        "type": "string",
+        "description": "Release version string, e.g. \"22.1\", \"24.04\""
+      },
+      "download_url": {
+        "type": "string",
+        "format": "uri",
+        "description": "Direct link to the ISO/IMG"
+      },
+      "size": {
+        "type": "string",
+        "description": "Remote file size, e.g. \"4233.8 MB\""
+      },
+      "arch": {
+        "type": "string",
+        "description": "Architecture identifier, e.g. \"x86_64\", \"arm64\""
+      },
+      "icon": {
+        "type": "string",
+        "format": "uri",
+        "description": "Variant‑specific icon URL"
+      },
+      "description": {
+        "type": "string",
+        "description": "Short blurb about this edition"
+      },
+      "type": {
+        "type": "string",
+        "description": "Category, e.g. \"Desktop\", \"Live\", \"Server\""
+      },
+      "checksum": {
+        "type": "string",
+        "description": "SHA256 (or other) checksum of the ISO/IMG"
+      },
+      "torrent_url": {
+        "type": "string",
+        "format": "uri",
+        "description": ".torrent file URL"
+      },
+      "magnet_link": {
+        "type": "string",
+        "format": "uri",
+        "description": "Magnet URI"
+      },
+      "hardware_requirements": {
+        "type": "object",
+        "description": "Minimum and recommended hardware specs",
+        "properties": {
+          "minimum": {
+            "type": "object",
+            "properties": {
+              "cpu":      { "type": "string" },
+              "ram":      { "type": "string" },
+              "storage":  { "type": "string" },
+              "graphics": { "type": "string" },
+              "network":  { "type": "string" }
+            },
+            "required": ["cpu","ram","storage","graphics","network"],
+            "additionalProperties": false
+          },
+          "recommended": {
+            "type": "object",
+            "properties": {
+              "cpu":      { "type": "string" },
+              "ram":      { "type": "string" },
+              "storage":  { "type": "string" },
+              "graphics": { "type": "string" },
+              "network":  { "type": "string" }
+            },
+            "required": ["cpu","ram","storage","graphics","network"],
+            "additionalProperties": false
+          }
+        },
+        "required": ["minimum","recommended"],
+        "additionalProperties": false
+      },
+      "documentation": {
+        "type": "array",
+        "items": { "type": "string", "format": "uri" },
+        "description": "Variant‑specific documentation URLs"
+      },
+      "wikis": {
+        "type": "array",
+        "items": { "type": "string", "format": "uri" },
+        "description": "Wiki page URLs"
+      },
+      "install_guides": {
+        "type": "array",
+        "items": { "type": "string", "format": "uri" },
+        "description": "Installation tutorial URLs"
+      },
+      "distrowatch": {
+        "type": "array",
+        "items": { "type": "string", "format": "uri" },
+        "description": "Distrowatch links"
+      },
+      "github_repos": {
+        "type": "array",
+        "items": { "type": "string", "format": "uri" },
+        "description": "Repository URLs"
+      },
+      "forums": {
+        "type": "array",
+        "items": { "type": "string", "format": "uri" },
+        "description": "Community forum URLs"
+      },
+      "mailing_lists": {
+        "type": "array",
+        "items": { "type": "string", "format": "uri" },
+        "description": "Mailing list archive or signup URLs"
+      }
+    },
+    "required": [
+      "name",
+      "version",
+      "download_url",
+      "size",
+      "arch",
+      "icon",
+      "description",
+      "type",
+      "checksum",
+      "torrent_url",
+      "magnet_link",
+      "hardware_requirements",
+      "documentation",
+      "wikis",
+      "install_guides",
+      "distrowatch",
+      "github_repos",
+      "forums",
+      "mailing_lists"
+    ],
+    "additionalProperties": false
+  }
+  
