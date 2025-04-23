@@ -7,7 +7,7 @@
   "scrape_distros": true,
   "distros": {
     "Alpine Linux": false,
-    "Arch Linux": false,
+    "Arch Linux": true,
     "Arco Linux": false,
     "Debian": false,
     "Elementry OS": false,
@@ -22,7 +22,7 @@
     "Peppermint OS": false,
     "Pop OS": false,
     "Qubes OS": false,
-    "Raspberry Pi": true,
+    "Raspberry Pi": false,
     "Rocky Linux": false,
     "Slackware": false,
     "Tails OS": false,
